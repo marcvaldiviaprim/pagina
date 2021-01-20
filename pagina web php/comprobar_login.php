@@ -9,6 +9,9 @@
 
     
     <?PHP 
+        $usuario=$_POST['correo'];
+
+        $_SESSION['usuario'] = $usuario;
 
     
 
@@ -36,10 +39,11 @@
             $numero_registro =$resultado->rowCount();
 
             if($numero_registro!=0){
-                echo "<h1>hola</h1>";
+               header('location: productos.php' );
+                
 
             }else{
-                header("location:login.php");
+                echo('error');
                 
             }
 

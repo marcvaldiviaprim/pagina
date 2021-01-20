@@ -10,12 +10,13 @@ if (isset($_POST['Registro'])) {
 	    $insert = "INSERT INTO usuarios(correo, nick, password) VALUES ('$correo','$nick','$password')";
 	    $resultado = mysqli_query($conn,$insert);
 	    if ($resultado) {
-	    	?> 
-	    	<h1 class="ok">Datos insertados</h1>
-           <?php
-	    } else {
-            echo 'Error';
-	    }
+			
+	  		  header('Location: login.php');
+           
+	    }else{
+		echo'Error';
+
+		}
     
 }
 
