@@ -5,15 +5,27 @@
 	<meta charset="utf-8">
 </head>
 <body>
-    <form method="post">
-	<h1>Registro</h1>
-   	<input type="text" name="nick" placeholder="nick">
-   	<input type="email" name="email" placeholder="Email">
-    <input type="text" name="password" placeholder="password">
-   	<input type="submit" name="Registro">
+    <form action="actualizarProductos.php?id=$id" method="POST">
+   	<input type="text" name="nombreForm" placeholder="nombreProducto">
+   	<input type="text" name="categoriaForm" placeholder="categoria">
+    <input type="text" name="precioForm" placeholder="precio">
+   	<input type="submit" name="Actualizar">
+
+    
     </form>
-        <?php 
-        include("registro_validacion.php");
-        ?>
+       
 </body>
 </html>
+        <?php 
+        if(isset($_POST['Actualizar'])){
+        header('Location: actualizarProductos.php');
+        }
+        if(isset($_POST['anadir'])){
+            header('Location: anadirProductos.php');
+            }
+        
+
+        ?>
+        
+
+

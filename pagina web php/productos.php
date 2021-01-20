@@ -37,40 +37,30 @@
         echo "</tr>";
         echo "<button type='submit' name='Actualizar' > Actualizar</button>";
         echo "<button type='submit' name='Eliminar'> Eliminar </button>";
+      
         echo " </form>";
         echo "</div>";
     
     }
+    echo " <form method='POST'>";
+    echo "<button type='submit' name='anadir'>Añadir</button> ";
+    echo" </form>"; 
     if(isset($_POST['Actualizar'])){
-    
-    $idConsulta= "SELECT nombre=$nombre , precio=$precio , categoria=$categoria FROM productos WHERE id = $id";
-    $resultados = mysqli_query($conn,$idConsulta);
-
-   
-        echo '<form>';
-        echo '<input type="text" placeholder="'.$nombre.'">';
-        echo '<input type="text" placeholder="'.$precio.'">';
-        echo '<input type="text" placeholder="'.$categoria.'">';
-        echo "<input type='submit' name='actualizar'>";
-        echo '</form>';
+         
         
-    }
-
-   
-
-    if(isset($_POST['actualizar'])){
-        $idConsulta= "UPDATE productos SET nombre = '$nombre' , categoria = '$categoria' ,precio = '$precio' WHERE id = $id";
-        $resultado = mysqli_query($conn,$idConsulta);
-
-
-    }  else{
-        echo 'no se pueden actualizar los datos';
+            header('Location: updateProductos.php');
+       
     }
     if(isset($_POST['Eliminar'])){
         $Eliminar= "DELETE from productos where id = $id";
         $resultados = mysqli_query($conn,$Eliminar);
+        $id=0;   
     
-    
+    }
+    if(isset($_POST['anadir'])){
+
+    header('Location: anadirProductos.php');
+
     }
 
 

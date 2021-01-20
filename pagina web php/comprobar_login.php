@@ -16,7 +16,6 @@
            require('database.php');
             
 
-
             $base = new PDO("mysql:host=$SERVER; dbname=tienda","root","usbw"); 
 
             $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
